@@ -1,0 +1,294 @@
+.menu{
+    width: 100%;
+    margin-right: 100px;
+    display: flex;
+    position: fixed;
+    justify-content: flex-end;
+}
+
+.modalMenu{
+    position:fixed;
+    display:flex;
+    flex-direction: column;
+    max-width: 300px;
+    width:100%;
+    height:200px;
+    justify-content:space-around;
+    align-items:start;
+    background: white;
+    top: -100%;
+    transition: 0.8s ease top;
+    margin-top: 80px;
+    border-radius: 0px 0px 5px 5px;
+}
+
+.modalMenu--show{
+    transition: 0.4s ease top;
+    top: 0;
+}
+
+.modalWrapper{
+    display:flex;
+    width:100%;
+    height:100%;
+    justify-content:center;
+    align-items:center;
+    background:rgba(0,0,0);
+    opacity: 0;
+    z-index: 0;
+    transition: 0.3s ease all;
+    top: 0;
+    left: 0;
+    margin-top: 80px;
+}
+
+.modalWrapper--show{
+    opacity: 0.2;
+    position: fixed;
+    transition: 0.3s ease all;
+}
+
+.modalMenuElement{
+    width: 100%;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: black;
+    border-bottom: 1px solid rgb(201, 201, 201);
+    padding: 0px 0px 0px 20px;
+}
+
+.modalMenuElement:hover{
+    background: rgb(223, 223, 223);
+    cursor: pointer;
+}
+
+.modalMenu a{
+    width: 100%;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: black;
+    border-bottom: 1px solid rgb(201, 201, 201);
+    padding: 0px 0px 0px 20px;
+}
+
+.modalMenu a:hover{
+    background: rgb(223, 223, 223);
+}
+
+
+
+/* <!---------------------------- ЛИЧНЫЙ ПРОФИЛЬ ----------------------------> */
+
+.profile{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: 99998;
+    background-color: rgba(0,0,0,.2);
+    visibility: hidden;
+    opacity: 0;
+    transition: 0.3s ease all;
+}
+
+.modalProfile{
+    display: flex;
+    flex-direction: column;
+    max-width: 700px;
+    width: 100%;
+    background: white;
+    border-radius: 10px;
+    z-index: 1;
+    transform: scale(0);
+    transition: 0.3s ease all;
+}
+
+.modalProfile--none{
+    display: none;
+}
+
+.profile--show{
+    visibility: visible;
+    opacity: 1;
+}
+
+.profile--show .modalProfile{
+    transform: scale(1);
+}
+
+.modalProfileHeader{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px;
+}
+
+.closeModal{
+    -webkit-user-drag: none;
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+}
+
+.closeModal:hover{
+    cursor: pointer;
+}
+
+.modalProfileBody{
+    display: flex;
+    flex-direction: column;
+    padding: 30px;
+}
+
+.modalProfileBody p{
+    margin-top: 20px;
+}
+
+.modalProfileBody h4{
+    margin-top: 30px;
+}
+
+.modalProfileButton{
+    display: flex;
+    padding: 0 30px 30px 30px;
+    justify-content: space-between;
+}
+
+.editMail, .editPassword{
+    display: flex;
+    justify-content: center;
+    max-width: 300px;
+    width: 100%;
+    padding: 15px;
+    border: 1px solid #0D5F2E;
+    border-radius: 5px;
+    text-decoration: none;
+    color: black;
+    transition: 0.3s;
+}
+
+.editMail:hover, .editPassword:hover{
+    background: #0D5F2E;
+    color: white;
+    cursor: pointer;
+}
+
+/* <!---------------------------- ИЗМЕНЕНИЕ ПОЧТЫ/ПАРОЛЯ ----------------------------> */
+
+.modalEditMail{
+    display: none;
+    flex-direction: column;
+    max-width: 700px;
+    width: 100%;
+    background: white;
+    border-radius: 10px;
+    z-index: 1;
+}
+
+.modalEditMail--show{
+    display: flex;
+}
+
+.modalEditPassword{
+    display: none;
+    flex-direction: column;
+    max-width: 700px;
+    width: 100%;
+    background: white;
+    border-radius: 10px;
+    z-index: 1;
+}
+
+.modalEditPassword--show{
+    display: flex;
+}
+
+.modalEditMailHeader, .modalEditPasswordHeader{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px;
+}
+
+.modalEditMailBody, .modalEditPasswordBody{
+    display: flex;
+    padding: 30px;
+}
+
+.modalEditMailBody, .modalEditPasswordBody form{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    flex-direction: column;
+}
+
+.mailCheck, .mailEdit, .oldPassword, .newPassword, .confirmNewPassword{
+    width: 100%;
+    max-width: 500px;
+    font-family: 'M_R';
+    font-size: 20px;
+    padding: 13px 20px;
+    border: 1px solid black;
+    border-radius: 5px;
+    margin-top: 20px;
+}
+
+.mailCheck, .mailEdit, .oldPassword, .newPassword, .confirmNewPassword:active, :hover, :focus {
+    outline: 0;
+    outline-offset: 0;
+}
+
+.modalEditMailButton , .modalEditPasswordButton{
+    display: flex;
+    padding: 10px 30px 30px 30px;
+    justify-content: space-between;
+}
+
+.backProfile, .confirmMail, .confirmPassword{
+    display: flex;
+    justify-content: center;
+    max-width: 300px;
+    width: 100%;
+    padding: 15px;
+    border: 1px solid #0D5F2E;
+    border-radius: 5px;
+    text-decoration: none;
+    color: black;
+    transition: 0.3s;
+}
+
+.backProfile:hover, .confirmMail:hover, .confirmPassword:hover{
+    background: #0D5F2E;
+    color: white;
+    cursor: pointer;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.hiden{
+    display: none;
+}
